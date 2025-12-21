@@ -1,0 +1,19 @@
+/* Global application styles */
+
+.root {
+  -fx-font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -fx-font-size: 13px;
+}
+
+.button {
+  -fx-background-color: #2b6fb3;
+  -fx-text-fill: white;
+}
+
+.login-pane {
+  -fx-padding: 20;
+}
+
+/* Import existing css files if present */
+@import url("login.css");
+@import url("dashboard.css");

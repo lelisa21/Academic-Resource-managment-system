@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" spacing="10" alignment="TOP_LEFT">
+    <padding><Insets all="20"/></padding>
+    <Label text="Settings" styleClass="section-title"/>
+    <Label text="Application settings will be available here."/>
+</VBox>

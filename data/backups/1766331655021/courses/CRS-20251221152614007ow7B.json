@@ -1,0 +1,19 @@
+{
+  "id" : "CRS-20251221152614007ow7B",
+  "courseCode" : "CS101",
+  "title" : "Introduction to Programming",
+  "description" : "Basic programming concepts.",
+  "credits" : 3,
+  "department" : "Computer Science",
+  "semester" : "Fall",
+  "teacherId" : "USR-20251221152613003ymwi",
+  "maxStudents" : 30,
+  "currentEnrollment" : 1,
+  "startDate" : null,
+  "endDate" : null,
+  "schedule" : null,
+  "classroom" : null,
+  "prerequisites" : [ ],
+  "learningOutcomes" : [ ],
+  "active" : true
+}

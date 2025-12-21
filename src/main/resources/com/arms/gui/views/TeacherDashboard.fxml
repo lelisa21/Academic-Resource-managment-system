@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.GridView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.arms.gui.controllers.TeacherController"
+            stylesheets="@../css/dashboard.css">
+
+    <!-- Top Header -->
+    <top>
+        <HBox styleClass="header" alignment="CENTER_LEFT" spacing="20">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            <Label text="Teacher Dashboard" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Label fx:id="welcomeLabel" styleClass="welcome-label"/>
+                <Button text="Logout" onAction="#handleLogout" styleClass="logout-button"/>
+            </HBox>
+        </HBox>
+    </top>
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox styleClass="sidebar" spacing="10">
+            <padding><Insets top="20" right="15" bottom="20" left="15"/></padding>
+            <VBox spacing="15" alignment="TOP_CENTER">
+                <ImageView fx:id="profileImage" fitWidth="80" fitHeight="80" styleClass="profile-image"/>
+                <Label fx:id="roleLabel" styleClass="role-label"/>
+                <Label fx:id="employeeIdLabel"/>
+                <Label fx:id="departmentLabel"/>
+                <Label fx:id="qualificationLabel"/>
+                <Label fx:id="experienceLabel"/>
+            </VBox>
+            <Separator/>
+            <VBox spacing="5">
+                <Button text="Dashboard" onAction="#handleRefreshData" styleClass="sidebar-button" maxWidth="Infinity"/>
+                <Button text="Courses" onAction="#handleRefreshData" styleClass="sidebar-button" maxWidth="Infinity"/>
+                <Button text="Assignments" onAction="#handleRefreshData" styleClass="sidebar-button" maxWidth="Infinity"/>
+                <Button text="Students" onAction="#handleRefreshData" styleClass="sidebar-button" maxWidth="Infinity"/>
+            </VBox>
+            <Separator/>
+            <VBox spacing="5">
+                <Button fx:id="addCourseButton" text="Add Course" onAction="#handleRefreshData" styleClass="primary-button" maxWidth="Infinity"/>
+                <Button fx:id="addAssignmentButton" text="Add Assignment" onAction="#handleCreateAssignment" styleClass="primary-button" maxWidth="Infinity"/>
+                <Button fx:id="gradeButton" text="Grade Submissions" onAction="#handleGradeSubmissions" styleClass="primary-button" maxWidth="Infinity"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- Center TabPane -->
+    <center>
+        <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE">
+
+            <!-- Dashboard Tab -->
+            <Tab fx:id="dashboardTab" text="Dashboard">
+                <ScrollPane fitToWidth="true">
+                    <VBox spacing="20" styleClass="dashboard-content">
+                        <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+                        <!-- Statistics Section -->
+                        <VBox fx:id="statisticsContainer" spacing="15"/>
+
+                        <!-- Teacher Overview -->
+                        <HBox spacing="20">
+                            <VBox spacing="10" prefWidth="600">
+                                <Label text="Courses" styleClass="section-title"/>
+                                <GridView fx:id="dashboardCoursesGrid" cellWidth="220" cellHeight="140"/>
+                            </VBox>
+                            <VBox spacing="10" prefWidth="400">
+                                <Label text="Assignments" styleClass="section-title"/>
+                                <GridView fx:id="dashboardAssignmentsGrid" cellWidth="260" cellHeight="140"/>
+                                <Label text="Students" styleClass="section-title"/>
+                                <ListView fx:id="dashboardStudentsList" prefHeight="200"/>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+
+            <!-- Courses Tab -->
+            <Tab fx:id="coursesTab" text="Courses">
+                <VBox spacing="10">
+                    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                    <Label text="My Courses" styleClass="section-title"/>
+                    <GridView fx:id="coursesTabGrid" cellWidth="260" cellHeight="140"/>
+                </VBox>
+            </Tab>
+
+            <!-- Assignments Tab -->
+            <Tab fx:id="assignmentsTab" text="Assignments">
+                <VBox spacing="10">
+                    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                    <Label text="My Assignments" styleClass="section-title"/>
+                    <GridView fx:id="assignmentsTabGrid" cellWidth="260" cellHeight="140"/>
+                </VBox>
+            </Tab>
+
+            <!-- Students Tab -->
+            <Tab fx:id="studentsTab" text="Students">
+                <VBox spacing="10">
+                    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                    <Label text="My Students" styleClass="section-title"/>
+                    <ListView fx:id="studentsTabList" prefHeight="400"/>
+                </VBox>
+            </Tab>
+
+        </TabPane>
+    </center>
+
+    <!-- Bottom Footer -->
+    <bottom>
+        <HBox styleClass="footer" alignment="CENTER" spacing="10">
+            <padding><Insets top="5" right="5" bottom="5" left="5"/></padding>
+            <Label text="Academic Records Management System v1.0.0" styleClass="footer-text"/>
+        </HBox>
+    </bottom>
+
+    <!-- Loading Overlay -->
+    <StackPane fx:id="loadingOverlay" visible="false" styleClass="loading-overlay">
+        <VBox alignment="CENTER" spacing="20">
+            <ProgressIndicator fx:id="loadingIndicator" progress="-1"/>
+            <Label text="Loading data..." styleClass="loading-text"/>
+        </VBox>
+    </StackPane>
+
+</BorderPane>

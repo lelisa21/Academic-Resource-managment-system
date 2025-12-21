@@ -1,0 +1,13 @@
+{
+  "id" : "ENR-20251221152614008HwZ5",
+  "studentId" : "USR-20251221152613005M4gF",
+  "courseId" : "CRS-20251221152614007ow7B",
+  "enrolledAt" : "2025-12-21T15:26:14.3093577",
+  "status" : "ENROLLED",
+  "grade" : null,
+  "finalScore" : 0.0,
+  "attendancePercentage" : 0,
+  "completedAt" : null,
+  "active" : true,
+  "completed" : false
+}

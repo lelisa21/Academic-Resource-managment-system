@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.GridView?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.arms.gui.controllers.StudentController"
+            stylesheets="@../css/dashboard.css">
+    
+    <top>
+        <HBox styleClass="header" alignment="CENTER_LEFT" spacing="20">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            
+            <Label text="Student Dashboard" styleClass="header-title"/>
+            
+            <Region HBox.hgrow="ALWAYS"/>
+            
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Label fx:id="welcomeLabel" styleClass="welcome-label"/>
+                <Button text="Logout" onAction="#handleLogout" styleClass="logout-button"/>
+            </HBox>
+        </HBox>
+    </top>
+    
+    <left>
+        <VBox styleClass="sidebar" spacing="10">
+            <padding><Insets top="20" right="15" bottom="20" left="15"/></padding>
+            
+            <VBox spacing="15" alignment="TOP_CENTER">
+                <ImageView fx:id="profileImage" fitWidth="80" fitHeight="80" 
+                          styleClass="profile-image"/>
+                <Label fx:id="roleLabel" styleClass="role-label"/>
+            </VBox>
+            
+            <Separator/>
+            
+            <VBox spacing="5">
+                <Button text="Dashboard" onAction="#handleRefreshData" 
+                       styleClass="sidebar-button" maxWidth="Infinity"/>
+                <Button text="My Courses" onAction="#handleViewAllCourses" 
+                       styleClass="sidebar-button" maxWidth="Infinity"/>
+                <Button text="Assignments" onAction="#handleViewAllAssignments" 
+                       styleClass="sidebar-button" maxWidth="Infinity"/>
+                <Button text="Grades" onAction="#handleViewAllGrades" 
+                       styleClass="sidebar-button" maxWidth="Infinity"/>
+                <Button text="Transcript" onAction="#handleGenerateTranscript" 
+                       styleClass="sidebar-button" maxWidth="Infinity"/>
+                <Button text="Schedule" onAction="#handleViewSchedule" 
+                       styleClass="sidebar-button" maxWidth="Infinity"/>
+            </VBox>
+            
+            <Separator/>
+            
+            <VBox spacing="5">
+                <Button text="Profile" onAction="#handleProfile" 
+                       styleClass="sidebar-button" maxWidth="Infinity"/>
+                <Button text="Settings" onAction="#handleSettings" 
+                       styleClass="sidebar-button" maxWidth="Infinity"/>
+                <Button text="Help" onAction="#handleHelp" 
+                       styleClass="sidebar-button" maxWidth="Infinity"/>
+            </VBox>
+        </VBox>
+    </left>
+    
+    <center>
+        <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE">
+            <Tab fx:id="dashboardTab" text="Dashboard">
+                <ScrollPane fitToWidth="true">
+                    <VBox spacing="20" styleClass="dashboard-content">
+                        <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                        
+                        <!-- Student Info -->
+                        <HBox spacing="30" styleClass="info-section">
+                            <VBox spacing="5">
+                                <Label fx:id="studentIdLabel" styleClass="info-label"/>
+                                <Label fx:id="departmentLabel" styleClass="info-label"/>
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label fx:id="semesterLabel" styleClass="info-label"/>
+                                <Label fx:id="cgpaLabel" styleClass="info-label"/>
+                                <Label fx:id="creditsCompletedLabel" styleClass="info-label"/>
+                            </VBox>
+                        </HBox>
+                        
+                        <!-- Quick Actions -->
+                        <HBox spacing="10" styleClass="quick-actions">
+                            <Button text="Enroll in Course" onAction="#handleEnrollInCourse" 
+                                   styleClass="action-button"/>
+                            <Button text="View Assignments" onAction="#handleViewAllAssignments" 
+                                   styleClass="action-button"/>
+                            <Button text="View Grades" onAction="#handleViewAllGrades" 
+                                   styleClass="action-button"/>
+                            <Button text="Refresh" onAction="#handleRefreshData" 
+                                   styleClass="action-button"/>
+                        </HBox>
+                        
+                        <!-- Statistics -->
+                        <VBox spacing="10">
+                            <Label text="Statistics" styleClass="section-title"/>
+                            <VBox fx:id="statisticsContainer" spacing="15"/>
+                        </VBox>
+                        
+                        <!-- Recent Courses -->
+                        <VBox spacing="10">
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Label text="My Courses" styleClass="section-title"/>
+                                <Label text="(Double-click to view details)" styleClass="hint-label"/>
+                            </HBox>
+                            <GridView fx:id="enrolledCoursesGrid" cellWidth="200" cellHeight="120"/>
+                        </VBox>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+            
+            <Tab fx:id="coursesTab" text="Courses">
+                <VBox spacing="10">
+                    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="My Enrolled Courses" styleClass="section-title"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="Enroll in New Course" onAction="#handleEnrollInCourse" 
+                               styleClass="primary-button"/>
+                    </HBox>
+                    
+                    <GridView fx:id="coursesGrid" cellWidth="220" cellHeight="140"/>
+                </VBox>
+            </Tab>
+            
+            <Tab fx:id="assignmentsTab" text="Assignments">
+                <VBox spacing="10">
+                    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="My Assignments" styleClass="section-title"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Label text="(Double-click to submit)" styleClass="hint-label"/>
+                    </HBox>
+                    
+                    <GridView fx:id="assignmentsGrid" cellWidth="250" cellHeight="150"/>
+                </VBox>
+            </Tab>
+            
+            <Tab fx:id="gradesTab" text="Grades">
+                <VBox spacing="10">
+                    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                    
+                    <Label text="My Grades" styleClass="section-title"/>
+                    
+                    <GridView fx:id="gradesGrid" cellWidth="280" cellHeight="160"/>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+    
+    <bottom>
+        <HBox styleClass="footer" alignment="CENTER" spacing="10">
+            <padding><Insets top="5" right="5" bottom="5" left="5"/></padding>
+            <Label text="Academic Records Management System v1.0.0" styleClass="footer-text"/>
+            <Label fx:id="statusLabel" text="Ready" styleClass="status-label"/>
+        </HBox>
+    </bottom>
+    
+    <!-- Loading Overlay -->
+    <StackPane fx:id="loadingOverlay" visible="false" styleClass="loading-overlay">
+        <VBox alignment="CENTER" spacing="20">
+            <ProgressIndicator fx:id="loadingIndicator" progress="-1"/>
+            <Label text="Loading data..." styleClass="loading-text"/>
+        </VBox>
+    </StackPane>
+</BorderPane>

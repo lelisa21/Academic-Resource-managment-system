@@ -1,0 +1,15 @@
+{
+  "id" : "ASG-20251221152423009KzMq",
+  "courseId" : "CRS-20251221152423007LCEM",
+  "title" : "Homework 1",
+  "description" : "Solve exercises 1-5",
+  "type" : null,
+  "maxScore" : 100.0,
+  "weight" : 10.0,
+  "dueDate" : "2025-12-28T15:24:23.1909643",
+  "createdAt" : "2025-12-21T15:24:23.1909643",
+  "attachments" : [ ],
+  "status" : "ACTIVE",
+  "submissionStudentIds" : [ ],
+  "overdue" : false
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.GridView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.arms.gui.controllers.CourseController"
+            stylesheets="@../css/dashboard.css">
+    
+    <top>
+        <HBox styleClass="header" alignment="CENTER_LEFT" spacing="20">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            
+            <Label text="Course Management" styleClass="header-title"/>
+            
+            <Region HBox.hgrow="ALWAYS"/>
+            
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Label fx:id="welcomeLabel" styleClass="welcome-label"/>
+                <Button text="Back to Dashboard" onAction="#handleLogout" 
+                       styleClass="logout-button"/>
+            </HBox>
+        </HBox>
+    </top>
+    
+    <center>
+        <VBox spacing="20">
+            <padding><Insets all="20"/></padding>
+            
+            <!-- Teacher Info Section -->
+            <VBox fx:id="teacherSection" spacing="10" styleClass="info-section">
+                <Label text="Teacher Information" styleClass="section-title"/>
+                <Label fx:id="teacherInfoLabel" styleClass="info-label"/>
+            </VBox>
+            
+            <!-- Filter Controls -->
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <Label text="Filters:" styleClass="filter-label"/>
+                
+                <TextField fx:id="searchField" promptText="Search courses..." 
+                          prefWidth="200"/>
+                
+                <ComboBox fx:id="departmentFilter" promptText="Department" 
+                         prefWidth="150"/>
+                
+                <ComboBox fx:id="semesterFilter" promptText="Semester" 
+                         prefWidth="150"/>
+                
+                <CheckBox fx:id="activeOnlyCheck" text="Active Only"/>
+                
+                <Region HBox.hgrow="ALWAYS"/>
+                
+                <Button text="Refresh" onAction="#handleRefresh" 
+                       styleClass="action-button"/>
+                <Button text="Export" onAction="#handleExport" 
+                       styleClass="action-button"/>
+            </HBox>
+            
+            <!-- Action Buttons -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button fx:id="addCourseButton" text="Add New Course" 
+                       onAction="#handleAddCourse" styleClass="primary-button"/>
+                <Button fx:id="editCourseButton" text="Edit Course" 
+                       onAction="#handleEditCourse" styleClass="action-button"/>
+                <Button fx:id="deleteCourseButton" text="Delete Course" 
+                       onAction="#handleDeleteCourse" styleClass="action-button"/>
+                <Button fx:id="viewDetailsButton" text="View Details" 
+                       onAction="#viewCourseDetails" styleClass="action-button"/>
+            </HBox>
+            
+            <!-- Courses Grid -->
+            <VBox spacing="10">
+                <Label text="Courses" styleClass="section-title"/>
+                <Label text="(Double-click to view details)" styleClass="hint-label"/>
+                
+                <GridView fx:id="coursesGrid" cellWidth="250" cellHeight="150"/>
+            </VBox>
+            
+            <!-- Status Bar -->
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Total Courses:" styleClass="status-label"/>
+                <Label fx:id="courseCountLabel" text="0" styleClass="status-value"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
