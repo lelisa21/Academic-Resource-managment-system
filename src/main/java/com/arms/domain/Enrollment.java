@@ -1,12 +1,10 @@
 package com.arms.domain;
 
-import com.arms.domain.enums.EnrollmentStatus;
-
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+import com.arms.domain.enums.EnrollmentStatus;
 public class Enrollment {
-
     private String id;
     private String studentId;
     private String courseId;

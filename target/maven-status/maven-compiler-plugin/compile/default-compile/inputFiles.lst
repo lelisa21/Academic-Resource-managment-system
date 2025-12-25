@@ -28,6 +28,7 @@ C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\domain\Grade.java
 C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\service\CourseService.java
 C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\util\ValidationHelper.java
 C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\Main.java
+C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\gui\dialogs\EditCourseDialog.java
 C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\gui\components\CourseCard.java
 C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\service\UserService.java
 C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\gui\util\AlertHelper.java
@@ -48,8 +49,10 @@ C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\util\SampleDataGen
 C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\gui\controllers\AssignmentController.java
 C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\gui\controllers\AdminController.java
 C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\gui\controllers\LoginController.java
+C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\gui\dialogs\EditUserDialog.java
 C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\domain\Admin.java
 C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\gui\controllers\StudentController.java
+C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\service\EnrollmentService.java
 C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\domain\enums\UserRole.java
 C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\persistence\IDGenerator.java
 C:\Users\lelis\Desktop\JAVA\trial\demo\src\main\java\com\arms\gui\dialogs\GradeDialog.java

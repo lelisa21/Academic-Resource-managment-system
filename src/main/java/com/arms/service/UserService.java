@@ -192,7 +192,6 @@ public class UserService {
         return dataManager.getUsers().values().stream()
                 .collect(Collectors.groupingBy(User::getRole, Collectors.counting()));
     }
-
     public List<User> searchUsers(String keyword) {
         String lowerKeyword = keyword.toLowerCase();
         return dataManager.getUsers().values().stream()

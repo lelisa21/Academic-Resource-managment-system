@@ -1,0 +1,21 @@
+{
+  "type" : "admin",
+  "id" : "USR-2025122115261300165fH",
+  "username" : "admin",
+  "email" : "admin@example.com",
+  "passwordHash" : "$2a$12$FCl.aXYjFufdJiHooQgOLuYc/2VSU1YZyfwV1xWvUbM.pz9OmQVJ.",
+  "firstName" : "System",
+  "lastName" : "Admin",
+  "phoneNumber" : null,
+  "role" : "ADMIN",
+  "status" : "ACTIVE",
+  "createdAt" : "2025-12-21T15:26:13.6601596",
+  "lastLogin" : "2025-12-23T20:49:48.0691549",
+  "profileImagePath" : null,
+  "emailVerified" : false,
+  "adminId" : "ADM-20251221152613002Hcdc",
+  "accessLevel" : null,
+  "permissions" : [ ],
+  "active" : true,
+  "fullName" : "System Admin"
+}

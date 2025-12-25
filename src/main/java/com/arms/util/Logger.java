@@ -1,12 +1,10 @@
 package com.arms.util;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-
 public class Logger {
     private static final String LOG_FILE = "logs/arms.log";
     private static final DateTimeFormatter formatter = 
@@ -15,8 +13,7 @@ public class Logger {
     
     public enum LogLevel {
         DEBUG, INFO, WARN, ERROR
-    }
-    
+    }  
     static {
         try {
             java.nio.file.Files.createDirectories(java.nio.file.Paths.get("logs/"));
@@ -24,15 +21,13 @@ public class Logger {
             System.err.println("Failed to create logs directory: " + e.getMessage());
         }
     }
-    
     public static void setMinLevel(LogLevel level) {
         minLevel = level;
     }
     
     public static void debug(String message) {
         log(LogLevel.DEBUG, message, null);
-    }
-    
+    } 
     public static void info(String message) {
         log(LogLevel.INFO, message, null);
     }
@@ -56,15 +51,11 @@ public class Logger {
         
         String timestamp = LocalDateTime.now().format(formatter);
         String logMessage = String.format("[%s] [%s] %s", 
-            timestamp, level, message);
-        
-        // Console output
+            timestamp, level, message);   
         System.out.println(logMessage);
         if (throwable != null) {
             throwable.printStackTrace();
         }
-        
-        // File output
         try (PrintWriter out = new PrintWriter(
             new BufferedWriter(new FileWriter(LOG_FILE, true)))) {
             out.println(logMessage);
@@ -74,14 +65,12 @@ public class Logger {
         } catch (IOException e) {
             System.err.println("Failed to write to log file: " + e.getMessage());
         }
-        
-        // Also send to monitoring service if configured
         if (level == LogLevel.ERROR) {
             sendToMonitoringService(logMessage, throwable);
         }
     }
     
     private static void sendToMonitoringService(String message, Throwable throwable) {
-        // Integration with monitoring services like Sentry, Logstash, etc.
+       
     }
 }

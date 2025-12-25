@@ -1,12 +1,12 @@
 package com.arms.domain;
 
-import com.arms.domain.enums.AssignmentStatus;
-import com.arms.domain.enums.AssignmentType;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+import com.arms.domain.enums.AssignmentStatus;
+import com.arms.domain.enums.AssignmentType;
 
 public class Assignment {
 
@@ -22,6 +22,7 @@ public class Assignment {
     private List<String> attachments;
     private AssignmentStatus status;
     private List<String> submissionStudentIds;
+     private boolean overdue;
 
     public Assignment() {
         this.attachments = new ArrayList<>();
@@ -45,6 +46,10 @@ public class Assignment {
         this.attachments = attachments == null ? new ArrayList<>() : attachments;
         this.status = status;
         this.submissionStudentIds = submissionStudentIds == null ? new ArrayList<>() : submissionStudentIds;
+    }
+    
+    public void setOverdue(boolean overdue) {
+        this.overdue = overdue;
     }
 
     public String getId() {

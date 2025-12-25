@@ -1,0 +1,15 @@
+{
+  "id" : "ASG-202512231933280027E2c",
+  "courseId" : "CRS-20251223192713001cmBM",
+  "title" : "Individual Assignment",
+  "description" : "1. Define the following briefly with sample code. \nI. Inheritance \nII. Encapsulation\nIII. Polymorphism \nIV. Abstraction \n2. How Exception handling works with Java? Describe with sample code.",
+  "type" : "HOMEWORK",
+  "maxScore" : 10.0,
+  "weight" : 5.0,
+  "dueDate" : "2025-12-30T23:59:00",
+  "createdAt" : "2025-12-23T19:33:28.3124843",
+  "attachments" : [ ],
+  "status" : "ACTIVE",
+  "submissionStudentIds" : [ ],
+  "overdue" : false
+}

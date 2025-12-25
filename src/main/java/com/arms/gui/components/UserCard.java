@@ -85,8 +85,7 @@ public class UserCard extends GridCell<User> {
                         backgroundColor = Color.LIGHTGRAY;
                 }
             }
-
-            // Dim if inactive (treat null as not active)
+            
             if (!UserStatus.ACTIVE.equals(user.getStatus())) {
                 backgroundColor = backgroundColor.darker();
                 container.setOpacity(0.7);

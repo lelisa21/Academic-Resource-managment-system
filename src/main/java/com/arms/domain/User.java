@@ -1,12 +1,12 @@
 package com.arms.domain;
 
+import java.time.LocalDateTime;
+import java.util.Objects;
+
 import com.arms.domain.enums.UserRole;
 import com.arms.domain.enums.UserStatus;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-
-import java.time.LocalDateTime;
-import java.util.Objects;
 
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
@@ -87,7 +87,6 @@ public abstract class User {
     public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
     }
-
     public String getFirstName() {
         return firstName;
     }

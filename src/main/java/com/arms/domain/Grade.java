@@ -141,12 +141,18 @@ public class Grade {
         percentage = (score / maxScore) * 100;
 
         if (percentage >= 90) {
+            letterGrade = "A+"; 
+        }else if (percentage >= 85) {
             letterGrade = "A"; 
-        }else if (percentage >= 80) {
-            letterGrade = "B"; 
+        }else if (percentage >= 75) {
+            letterGrade = "B+"; 
         }else if (percentage >= 70) {
-            letterGrade = "C"; 
+            letterGrade = "B"; 
+        }else if (percentage >= 65) {
+            letterGrade = "C+"; 
         }else if (percentage >= 60) {
+            letterGrade = "C"; 
+        }else if (percentage >= 50) {
             letterGrade = "D"; 
         }else {
             letterGrade = "F";

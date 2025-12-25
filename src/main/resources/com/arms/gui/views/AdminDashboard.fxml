@@ -56,12 +56,10 @@
                                 <Label text="Users" styleClass="section-title"/>
                                 <GridView fx:id="usersGrid" cellWidth="220" cellHeight="140"/>
                             </VBox>
-                            <VBox spacing="10" prefWidth="400">
-                                <Label text="User Distribution" styleClass="section-title"/>
-                                <PieChart fx:id="userDistributionChart" prefHeight="200"/>
-                                <Label text="Recent Logs" styleClass="section-title"/>
-                                <ListView fx:id="logsListView" prefHeight="200"/>
-                            </VBox>
+                           <VBox spacing="10" prefWidth="400">
+                            <Label text="Recent Logs" styleClass="section-title"/>
+                            <ListView fx:id="logsListView" prefHeight="400"/>
+                           </VBox>
                         </HBox>
                     </VBox>
                 </ScrollPane>
@@ -112,9 +110,9 @@
 
     <!-- Loading Overlay -->
     <StackPane fx:id="loadingOverlay" visible="false" styleClass="loading-overlay">
-        <VBox alignment="CENTER" spacing="20">
-            <ProgressIndicator fx:id="loadingIndicator" progress="-1"/>
-            <Label text="Loading data..." styleClass="loading-text"/>
-        </VBox>
-    </StackPane>
+    <VBox alignment="CENTER" spacing="20">
+        <ProgressIndicator fx:id="loadingIndicator" progress="-1"/>
+        <Label text="Loading data..." styleClass="loading-text"/>
+    </VBox>
+</StackPane>
 </BorderPane>

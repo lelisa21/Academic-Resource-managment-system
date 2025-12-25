@@ -1,0 +1,14 @@
+{
+  "id" : "GRD-20251221152423010b1sv",
+  "studentId" : "USR-20251221152422005128d",
+  "courseId" : "CRS-20251221152423007LCEM",
+  "assignmentId" : "ASG-20251221152423009KzMq",
+  "score" : 85.0,
+  "maxScore" : 100.0,
+  "percentage" : 85.0,
+  "letterGrade" : "B",
+  "feedback" : null,
+  "gradedBy" : null,
+  "gradedAt" : "2025-12-21T15:24:23.2009643",
+  "published" : false
+}
